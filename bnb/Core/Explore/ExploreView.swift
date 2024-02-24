@@ -20,6 +20,10 @@ struct ExploreView: View {
                     }
                 }
             }
+            .padding()
+            .navigationDestination(for: Int.self) { listing in
+                Text("Listing Detail View...")
+            }
         }
     }
 }
