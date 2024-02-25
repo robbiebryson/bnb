@@ -32,7 +32,7 @@ struct ListingItemView: View {
                 VStack (alignment: .leading) {
                     Text("Miami, Florida")
                         .fontWeight(.semibold)
-                        .foregroundStyle(.black)
+                        
                     
                     Text("12 mi away")
                         .foregroundStyle(.gray)
@@ -43,7 +43,7 @@ struct ListingItemView: View {
                             .fontWeight(.semibold)
                         Text("night")
                     }
-                    .foregroundStyle(.black)
+                  
 
                     
                 }

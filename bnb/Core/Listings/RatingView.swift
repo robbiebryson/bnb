@@ -13,9 +13,8 @@ struct RatingView: View {
             Image(systemName: "star.fill")
             
             Text("4.86")
-            
+                .fontWeight(.semibold)
         }
-        .foregroundStyle(.black)
     }
 }
 
