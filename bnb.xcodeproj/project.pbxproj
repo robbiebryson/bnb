@@ -17,6 +17,7 @@
 		8C67BA962B8AA9100073A457 /* ListingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C67BA952B8AA9100073A457 /* ListingDetailView.swift */; };
 		8C67BA992B8AA9D20073A457 /* ListingImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C67BA982B8AA9D20073A457 /* ListingImageCarouselView.swift */; };
 		8C67BA9B2B8AABEA0073A457 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C67BA9A2B8AABEA0073A457 /* RatingView.swift */; };
+		8C67BAA42B8BE7750073A457 /* DestinationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C67BAA32B8BE7750073A457 /* DestinationSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		8C67BA952B8AA9100073A457 /* ListingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailView.swift; sourceTree = "<group>"; };
 		8C67BA982B8AA9D20073A457 /* ListingImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingImageCarouselView.swift; sourceTree = "<group>"; };
 		8C67BA9A2B8AABEA0073A457 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		8C67BAA32B8BE7750073A457 /* DestinationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				8C67BA502B8A2CCD0073A457 /* ExploreView.swift */,
+				8C67BAA32B8BE7750073A457 /* DestinationSearchView.swift */,
 				8C67BA542B8A78870073A457 /* SearchAndFilterBar.swift */,
 			);
 			path = Explore;
@@ -265,6 +268,7 @@
 				8C67BA512B8A2CCD0073A457 /* ExploreView.swift in Sources */,
 				8C67BA9B2B8AABEA0073A457 /* RatingView.swift in Sources */,
 				8C67BA552B8A78870073A457 /* SearchAndFilterBar.swift in Sources */,
+				8C67BAA42B8BE7750073A457 /* DestinationSearchView.swift in Sources */,
 				8C67BA962B8AA9100073A457 /* ListingDetailView.swift in Sources */,
 				8C67BA992B8AA9D20073A457 /* ListingImageCarouselView.swift in Sources */,
 				8C67BA342B8A29D20073A457 /* bnbApp.swift in Sources */,

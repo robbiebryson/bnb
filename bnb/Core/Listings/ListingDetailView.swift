@@ -9,10 +9,31 @@ import SwiftUI
 import MapKit
 
 struct ListingDetailView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         ScrollView{
-            ListingImageCarouselView()
-                .frame(height: 320)
+            ZStack(alignment: .topLeading) {
+                ListingImageCarouselView()
+                    .frame(height: 320)
+                
+                Button {
+                    dismiss()
+                } label:
+                {
+                    Image(systemName: "chevron.left")
+//                        .foregroundStyle(.black)
+                        .background() {
+                            Circle()
+                                .fill(.background)
+                                .frame(width: 32, height: 32)
+                        }
+                        .padding(.top, 64)
+                        .padding(.leading, 32)
+                }
+            }
+            .tint(.primary)
             
             
             VStack(alignment: .leading, spacing: 8) {
@@ -34,6 +55,7 @@ struct ListingDetailView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Divider()
+                .padding(.horizontal, 32)
             
             //Host Info View
             HStack {
@@ -56,7 +78,7 @@ struct ListingDetailView: View {
                 Image("ProfilePhoto1")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 64, height: 64)
+                    .frame(width: 42, height: 42)
                     .clipShape(Circle())
             }
             .padding()
