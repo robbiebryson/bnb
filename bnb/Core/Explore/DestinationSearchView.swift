@@ -26,16 +26,26 @@ struct DestinationSearchView: View {
         VStack {
             
             
-            Button {
-                withAnimation(.snappy) {
-                    show.toggle()
-                }
-            } label: {
-                Image(systemName: "xmark.circle")
-                    .imageScale(.large)
-                    .tint(.primary)
+            HStack {
+                Button {
+                    withAnimation(.snappy) {
+                        show.toggle()
+                    }
+                } label: {
+                    Image(systemName: "xmark.circle")
+                        .imageScale(.large)
+                        .tint(.primary)
             }
-            
+                Spacer()
+                
+                Button("Clear") {
+                    destination = ""
+                }
+                .foregroundStyle(.primary)
+                .font(.subheadline)
+                .fontWeight(.semibold)
+            }
+            .padding()
             
             
             
@@ -149,6 +159,7 @@ struct DestinationSearchView: View {
                 .onTapGesture {
                     withAnimation(.snappy) {selectedOption = .guests}
                 }
+            Spacer()
         }
     }
 }
