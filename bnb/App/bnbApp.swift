@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct bnbApp: App {
+ 
     var body: some Scene {
         WindowGroup {
             ContentView()

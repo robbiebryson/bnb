@@ -11,11 +11,11 @@ import MapKit
 struct ListingDetailView: View {
     
     @Environment(\.dismiss) var dismiss
-    
+    let listing: Listing
     var body: some View {
         ScrollView{
             ZStack(alignment: .topLeading) {
-                ListingImageCarouselView()
+                ListingImageCarouselView(listing: listing)
                     .frame(height: 320)
                 
                 Button {
@@ -37,17 +37,22 @@ struct ListingDetailView: View {
             
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("Miami Villa")
+                Text("\(listing.title)")
                     .font(.title)
                     .fontWeight(.semibold)
                 
                 VStack(alignment: .leading) {
                     HStack {
-                        RatingView()
+                        HStack(spacing: 2) {
+                            Image(systemName: "star.fill")
+                            
+                            Text("\(listing.rating)")
+                                .fontWeight(.semibold)
+                        }
                         Text("-")
                         Text("28 Reviews")
                     }
-                    Text("Miami, Florida")
+                    Text("\(listing.city), \(listing.state)")
                 }
                 .font(.caption)
             }
@@ -60,22 +65,22 @@ struct ListingDetailView: View {
             //Host Info View
             HStack {
                 VStack (alignment: .leading, spacing: 2){
-                    Text("Entire Villa hosted by John Smith")
+                    Text("Entire Villa hosted by \(listing.ownerName)")
                         .font(.headline)
                   .frame(width: 250, alignment: .leading)
                     
                     HStack(spacing: 2) {
-                        Text("4 guests -")
-                        Text("4 bedrooms -")
-                        Text("4 beds -")
-                        Text("4.5 baths")
+                        Text("\(listing.numberOfGuests) Guests - ")
+                        Text("\(listing.numberOfBedrooms) Bedrooms - ")
+                        Text("\(listing.numberOfBathrooms) Bathrooms - ")
+                        Text("\(listing.numberOfBeds) Beds")
                     }
                     .font(.caption)
                 }
                 .frame(width: 300, alignment: .leading)
                 Spacer()
                 
-                Image("ProfilePhoto1")
+                Image("\(listing.ownerImageUrl)")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 42, height: 42)
@@ -209,5 +214,5 @@ struct ListingDetailView: View {
     }
 }
 #Preview {
-    ListingDetailView()
+    ListingDetailView(listing: DeveloperPreview.shared.listings[0])
 }
