@@ -10,7 +10,7 @@ import Foundation
 struct Listing: Identifiable, Codable {
     let id: String
     let ownerUid: String
-    let ownernAME: String
+    let ownerName: String
     let ownerImageUrl: String
     let numberOfBedrooms: Int
     let numberOfBathrooms: Int
@@ -19,38 +19,40 @@ struct Listing: Identifiable, Codable {
     var pricePerNight: Int
     let latitude: Double
     let longitude: Double
+    var imageURLs: [String]
     let address: String
     let city: String
     let state: String
-    let listingTitle: String
+    let title: String
     var rating: Double
     var features: [ListingFeatures]
     var amenities: [ListingAmenities]
+    let type: ListingType
 }
 
 enum ListingFeatures: Int, Codable, Identifiable, Hashable {
     case selfCheckIn
-    case SuperHost
+    case superHost
     
     
     var imageName: String {
         switch self {
         case .selfCheckIn: return "door.left.hand.open"
-        case .SuperHost: return "medal"
+        case .superHost: return "medal"
         }
     }
     
     var title: String {
         switch self {
         case .selfCheckIn: return "Self Check-in"
-        case .SuperHost: return "Superhost"
+        case .superHost: return "Superhost"
         }
     }
     
     var subtitle: String {
         switch self {
         case .selfCheckIn: return "Check yourself in with the keypad"
-        case .SuperHost: return "Superhosts are highly rated hosts who are committed to providing great experiences for guests."
+        case .superHost: return "Superhosts are highly rated hosts who are committed to providing great experiences for guests."
         }
     }
     var id: Int {return self.rawValue}
