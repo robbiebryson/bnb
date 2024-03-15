@@ -35,7 +35,7 @@ struct DestinationSearchView: View {
                     Image(systemName: "xmark.circle")
                         .imageScale(.large)
                         .tint(.primary)
-            }
+                }
                 Spacer()
                 
                 if !destination.isEmpty {
@@ -54,30 +54,30 @@ struct DestinationSearchView: View {
             VStack(alignment: .leading) {
                 if selectedOption == .location {
                     Text("Where to?")
-                                        .font(.title2)
-                                        .fontWeight(.semibold)
-                                        .foregroundStyle(.primary)
-                                    
-                                    HStack {
-                                        Image(systemName: "magnifyingglass")
-                                            .imageScale(.small)
-                                        
-                                        TextField("Search Destination", text: $destination)
-                                            .font(.subheadline)
-                                    }
-                                    .frame(height: 44)
-                                    .padding(.horizontal)
-                                    .overlay {
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
-                                            .foregroundStyle(Color(.systemGray))
-                                    }
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.primary)
+                    
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .imageScale(.small)
+                        
+                        TextField("Search Destination", text: $destination)
+                            .font(.subheadline)
+                    }
+                    .frame(height: 44)
+                    .padding(.horizontal)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                            .foregroundStyle(Color(.systemGray))
+                    }
                 } else {
                     CollapsedPickerView(title: "Where", description: "Add Destination")
-
+                    
                 }
                 
-                }
+            }
             
             .modifier(CollapsibleDestinationViewModifier())
             .frame(height: selectedOption == .location ? 120 : 64)
@@ -85,11 +85,11 @@ struct DestinationSearchView: View {
                 withAnimation(.snappy) {selectedOption = .location}
             }
             
-//            date selection view
+            //            date selection view
             
             VStack(alignment: .leading) {
                 if selectedOption == .dates {
-                        Text("When's your trip?")
+                    Text("When's your trip?")
                         .font(.title2)
                         .fontWeight(.semibold)
                     
@@ -97,15 +97,15 @@ struct DestinationSearchView: View {
                     VStack {
                         DatePicker("From", selection: $startDate, displayedComponents: .date)
                             .onTapGesture(count: 99, perform: {
-                                       // overrides tap gesture to fix ios 17.1 bug
-                                   })
+                                // overrides tap gesture to fix ios 17.1 bug
+                            })
                         
                         Divider()
                         
                         DatePicker("To", selection: $endDate, displayedComponents: .date)
                             .onTapGesture(count: 99, perform: {
-                                       // overrides tap gesture to fix ios 17.1 bug
-                                   })
+                                // overrides tap gesture to fix ios 17.1 bug
+                            })
                         
                     }
                     .foregroundStyle(.secondary)
@@ -117,12 +117,12 @@ struct DestinationSearchView: View {
             }
             .modifier(CollapsibleDestinationViewModifier())
             .frame(height: selectedOption == .dates ? 180 : 64)
-                .onTapGesture {
-                    withAnimation(.snappy) {selectedOption = .dates}
-                }
+            .onTapGesture {
+                withAnimation(.snappy) {selectedOption = .dates}
+            }
             
             
-//            number of guests view
+            //            number of guests view
             VStack(alignment: .leading) {
                 if selectedOption == .guests {
                     Text("Who's Coming?")
@@ -146,9 +146,9 @@ struct DestinationSearchView: View {
             }
             .modifier(CollapsibleDestinationViewModifier())
             .frame(height: selectedOption == .guests ? 120 : 64)
-                .onTapGesture {
-                    withAnimation(.snappy) {selectedOption = .guests}
-                }
+            .onTapGesture {
+                withAnimation(.snappy) {selectedOption = .guests}
+            }
             Spacer()
         }
     }
